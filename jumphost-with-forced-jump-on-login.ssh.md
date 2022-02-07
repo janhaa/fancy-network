@@ -20,7 +20,7 @@ and automatically force the connection to tunnel to target-host-1.
    Create persistent reverse tunnel from target-host-x to jumphost
    This requires exchange of publickeys for connection from target-host to jumphost and vice-versa.
 2. Create user profile on jumphost
-3. Configure forced connection to target-host in ~/.ssh/authorized_keys
+3. Configure forced connection to target-host in `~/.ssh/authorized_keys`
 
 ## Implementation
 
@@ -41,6 +41,6 @@ ExecStart=autossh -M 0 -N -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3"
 WantedBy=multi-user.target
 ```
 
-3. On jumphost add following to /home/<user-on-jumphost>/.ssh/authorized_keys:
+3. On jumphost add following to `/home/<user-on-jumphost>/.ssh/authorized_keys`:
 
 `command="ssh -p <port-on-jumphost> <user-on-target-host>@localhost" <public ssh key>`
