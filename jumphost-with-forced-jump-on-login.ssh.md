@@ -41,5 +41,6 @@ ExecStart=autossh -M 0 -N -o "ServerAliveInterval 30" -o "ServerAliveCountMax 3"
 WantedBy=multi-user.target
 ```
 
-3. Add following to ~/.ssh/authorized_keys:
+3. On jumphost add following to /home/<user-on-jumphost>/.ssh/authorized_keys:
+
 `command="ssh -p <port-on-jumphost> <user-on-target-host>@localhost" <public ssh key>`
